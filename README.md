@@ -20,7 +20,7 @@ Follow the instructions in the below installation and usage sections.
 Feel free to submit a pull request or contact me. :)
 
 ## Demo
-![ssql.gif](https://github.com/Geo-0101/ssql/blob/master/ssql.gif)
+![ssql.gif](https://github.com/georgiotunson/ssql/blob/master/ssql.gif)
 
 ## Installation
 
