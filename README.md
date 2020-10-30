@@ -26,7 +26,7 @@ Feel free to submit a pull request or contact me. I would love your help :)
 
 Access the compiled binaries for all supported architectures via this link https://github.com/georgiotunson/ssql/releases/tag/v1.0.0
 
-### Examples: 
+## Installation Examples: 
 ### Linux 
 #### get the binary
 ```
