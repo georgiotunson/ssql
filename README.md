@@ -98,7 +98,7 @@ host-name3:
 Once you have installed ssql and configured your desired hosts, using ssql is as simple
 as running the following commands.
 ```
-ssql host set host-name1
+ssql host set my-mysql-host
 ssql show databases
 ```
 In the above commands you set the current host to one of the hosts from your .ssql file
@@ -106,7 +106,7 @@ and listed the available databases.
 
 You can now select a database and execute queries.
 ``` 
-ssql use database-name
+ssql use my-database-name
 ssql show tables
 ssql -h
 ```
