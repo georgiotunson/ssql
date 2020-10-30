@@ -189,7 +189,7 @@ func checkArgsIncludeChild(args []string, validator map[string]bool, c chan bool
 	c <- false
 }
 
-// BuilBuildDbQuery uses args passed by the user and builds a db
+// BuildDbQuery uses args passed by the user and builds a db
 // query out of them.
 func BuildDbQuery(args []string, prevArgCheck map[string]bool, dbQueryBase string) string {
 	for i := 0; i < len(args); i++ {
