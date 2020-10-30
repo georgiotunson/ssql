@@ -17,19 +17,32 @@ Follow the instructions in the below installation and usage sections.
 
 ## To start developing ssql
 
-Feel free to submit a pull request or contact me. :)
+Feel free to submit a pull request or contact me. I would love your help :)
 
 ## Demo
 ![ssql.gif](https://github.com/georgiotunson/ssql/blob/master/ssql.gif)
 
 ## Installation
 
-* [With homebrew (for Mac)](#with-homebrew-for-mac)
+Access the compiled binaries for all supported architectures via this link https://github.com/georgiotunson/ssql/releases/tag/v1.0.0
 
-### With homebrew (for Mac)
-
+###Examples: 
+###Linux 
 ```
-brew install ssql
+wget https://github.com/georgiotunson/ssql/releases/download/v1.0.0/ssql_v1.0.0_linux_amd64.zip
+```
+```
+unzip ssql_v1.0.0_linux_amd64.zip &&\
+mv ./linux_amd64/ssql /usr/local/bin && rm -rf linux_amd64 ssql_v1.0.0_linux_amd64.zip
+```
+
+###Mac
+```
+curl -LJO https://github.com/georgiotunson/ssql/releases/download/v1.0.0/ssql_v1.0.0_darwin_amd64.zip
+```
+```
+unzip ssql_v1.0.0_darwin_amd64.zip &&\
+mv ./darwin_amd64/ssql /usr/local/bin && rm -rf darwin_amd64 ssql_v1.0.0_darwin_amd64.zip
 ```
 
 ## Usage
