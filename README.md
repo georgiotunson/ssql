@@ -37,7 +37,7 @@ wget https://github.com/georgiotunson/ssql/releases/download/v1.0.0/ssql_v1.0.0_
 unzip ssql_v1.0.0_linux_amd64.zip &&\
 mv ./linux_amd64/ssql /usr/local/bin && rm -rf linux_amd64 ssql_v1.0.0_linux_amd64.zip
 ```
-
+----
 ### Mac
 #### get the binary
 ```
