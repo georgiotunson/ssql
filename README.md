@@ -80,7 +80,7 @@ my-mysql-host:
   password: password
 
 host-name2:
-  platform: postgres
+  platform: mysql
   host: localhost
   port: 3300
   user: user
