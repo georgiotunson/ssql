@@ -54,10 +54,11 @@ mv ./darwin_amd64/ssql /usr/local/bin && rm -rf darwin_amd64 ssql_v1.0.0_darwin_
 #### Step 1
 
 In order to use ssql, you must add the database credentials for all
-db hosts that you plan to use to your .ssql file. This file can either
+db hosts that you plan to use to a file named ".ssql". This file can either
 be passed to individual commands by using the --config flag, or you can
-use the default config file stored in your $HOME directory($HOME/.ssql). The .ssql file
-is a .yaml file and each host should be configured as follows:
+configure a default config file by creating a file named .ssql and storing it
+in your $HOME directory($HOME/.ssql). Within the file named .ssql, each
+host should be configured as follows.
 ```
 host-name:
   platform: mysql
@@ -71,7 +72,7 @@ that you will use when using the 'ssql host set' command.
 
 Configuring multiple hosts would look something like this:
 ``` 
-host-name1:
+my-mysql-host:
   platform: mysql
   host: localhost
   port: 3300
