@@ -17,7 +17,7 @@ type hostState struct {
 	CurrentDb string `json:"CurrentDb"`
 }
 
-// CommandOrchestrator is the function that all commands call to be exectued. It orchestrates
+// CommandOrchestrator is the function that all commands call to be executed. It orchestrates
 // validation and configuration for each command.
 func CommandOrchestrator(initCommand string, args []string, prevArgCheckMap map[string]bool, checkDbRequired bool, validators ...map[string]bool) {
 	// get user's $HOME dir

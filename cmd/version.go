@@ -26,7 +26,7 @@ import (
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of ssql",
-	Long:  `Print the version number of current ssql installion`,
+	Long:  `Print the version number of current ssql installation`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("ssql v1.0")
 	},
