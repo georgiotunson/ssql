@@ -85,7 +85,7 @@ func CommandOrchestrator(initCommand string, args []string, prevArgCheckMap map[
 
 		// postgres
 	} else {
-		// else do postgres stuff(coming soon)
+		// TODO: else do postgres stuff(coming soon)
 	}
 }
 
@@ -145,16 +145,29 @@ func CheckErr(fromMsg string, err error) {
 // CreateMysqlQueryCommand creates the mysql command out of the user's host config
 // and passed args.
 func CreateMysqlQueryCommand(dbQuery string, hostSettings map[string]string, commandPath string) *exec.Cmd {
-	dbUser := fmt.Sprintf(`-u%s`, hostSettings["user"])
-	dbPassword := fmt.Sprintf(`-p%s`, hostSettings["password"])
-	showDbCmd := &exec.Cmd{
-		Path: commandPath,
-		Args: []string{commandPath, `-h`, hostSettings["host"],
-			`-P`, hostSettings["port"], dbUser, dbPassword, `-e`, dbQuery},
-		Stdout: os.Stdout,
-		Stderr: os.Stderr,
+	if hostSettings["defaults_file"] != "" {
+		dbUser := fmt.Sprintf(`-u%s`, hostSettings["user"])
+		dbOptionFile := fmt.Sprintf(`--defaults-file=%s`, hostSettings["defaults_file"])
+		dbCmd := &exec.Cmd{
+			Path: commandPath,
+			Args: []string{commandPath, dbOptionFile, `-h`, hostSettings["host"],
+				`-P`, hostSettings["port"], dbUser, `-e`, dbQuery},
+			Stdout: os.Stdout,
+			Stderr: os.Stderr,
+		}
+		return dbCmd
+	} else {
+		dbUser := fmt.Sprintf(`-u%s`, hostSettings["user"])
+		dbPassword := fmt.Sprintf(`-p%s`, hostSettings["password"])
+		dbCmd := &exec.Cmd{
+			Path: commandPath,
+			Args: []string{commandPath, `-h`, hostSettings["host"],
+				`-P`, hostSettings["port"], dbUser, dbPassword, `-e`, dbQuery},
+			Stdout: os.Stdout,
+			Stderr: os.Stderr,
+		}
+		return dbCmd
 	}
-	return showDbCmd
 }
 
 // CheckArgsInclude is a generic variadic function that checks to see if an array(args)
