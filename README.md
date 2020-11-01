@@ -1,7 +1,7 @@
 # Simplesql (ssql)
 
 ----
-Simplesql (ssql) is an open source command line utility which is a Mysql CLI that provides a
+Simplesql (ssql) is an open source command line utility which is a MySQL CLI that provides a
 command-line interface for managing your mysql databases. It manages host credentials and option
 files for your database servers allowing you to execute database statements/queries from the command
 line without wrapping your queries in a connection request to your databases host.
