@@ -30,23 +30,23 @@ Access the compiled binaries for all supported architectures via this link https
 ### Linux 
 #### get the binary
 ```
-wget https://github.com/georgiotunson/ssql/releases/download/v1.0.0/ssql_v1.0.0_linux_amd64.zip
+wget https://github.com/georgiotunson/ssql/releases/download/v1.1.0/ssql_v1.1.0_linux_amd64.zip
 ```
 #### install the binary 
 ```
-unzip ssql_v1.0.0_linux_amd64.zip &&\
-mv ./linux_amd64/ssql /usr/local/bin && rm -rf linux_amd64 ssql_v1.0.0_linux_amd64.zip
+unzip ssql_v1.1.0_linux_amd64.zip &&\
+mv ./linux_amd64/ssql /usr/local/bin && rm -rf linux_amd64 ssql_v1.1.0_linux_amd64.zip
 ```
 ----
 ### Mac
 #### get the binary
 ```
-curl -LJO https://github.com/georgiotunson/ssql/releases/download/v1.0.0/ssql_v1.0.0_darwin_amd64.zip
+curl -LJO https://github.com/georgiotunson/ssql/releases/download/v1.1.0/ssql_v1.1.0_darwin_amd64.zip
 ```
 #### install the binary 
 ```
-unzip ssql_v1.0.0_darwin_amd64.zip &&\
-mv ./darwin_amd64/ssql /usr/local/bin && rm -rf darwin_amd64 ssql_v1.0.0_darwin_amd64.zip
+unzip ssql_v1.1.0_darwin_amd64.zip &&\
+mv ./darwin_amd64/ssql /usr/local/bin && rm -rf darwin_amd64 ssql_v1.1.0_darwin_amd64.zip
 ```
 
 ## Usage
