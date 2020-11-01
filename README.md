@@ -66,6 +66,7 @@ host-name:
   port: 3300
   user: user
   password: password
+  defaults_file: ""
 ```
 Please note that 'host-name' can be whatever you like and it is the name 
 that you will use when using the 'ssql host set' command. 
@@ -78,6 +79,7 @@ my-mysql-host:
   port: 3300
   user: user
   password: password
+  defaults_file: ""
 
 host-name2:
   platform: mysql
@@ -85,6 +87,7 @@ host-name2:
   port: 3300
   user: user
   password: password
+  defaults_file: ""
 
 host-name3:
   platform: mysql
@@ -92,7 +95,68 @@ host-name3:
   port: 3300
   user: user
   password: password
+  defaults_file: ""
 ```
+#### IMPORTANT: 
+As you have undoubtedly noticed, the above example stores a plaintext password in a config
+file and in this case, the application will also use this password on the command line. This
+is insecure for a variety of reasons and is not recommended. This next section will describe 
+how to configure your .ssql file to use option files to access your database servers. 
+
+#### Step 1.5 (RECOMMENDED)
+Create or use an existing option file to store your password/s.
+```
+echo "[client]
+password=password" > ~/my.cnf
+```
+To keep the password safe, the file should not be accessible to anyone but yourself. To ensure this,
+set the file access mode to 400 or 600.
+```
+chmod 600 ~/my.cnf
+```
+Now simply add the full path to the above created file to your .ssql config file for any host that
+you desire a more secure use of database server credentials for. The .ssql file would look something like
+this:
+```
+my-db-host:
+  platform: mysql
+  host: localhost
+  port: 3300
+  user: user
+  password: ""
+  defaults_file: "/home/james/my.cnf"
+```
+Please note that the password section is left as an empty string. Even if a password is set in this
+file for this host, if the path to an option file exists, the password will not be used, even if the
+path to the option file produces an error. 
+
+Additional information about configuring option files can be found here:
+https://dev.mysql.com/doc/refman/8.0/en/password-security-user.html
+
+----
+
+#### Quickstart for .ssql config file
+```
+echo 'your-host-name1: # <- This should be your desired host name
+  platform: mysql
+  host: # replace this comment with your host
+  port: # replace this comment with your port
+  user: # replace this comment with your user
+  password: # replace this comment with your password
+  defaults_file: "" # <- If you use this defaults_file, your password will not be used.
+                    #    Please see README.
+
+your-host-name2: # <- This should be your desired host name
+  platform: mysql
+  host: # replace this comment with your host
+  port: # replace this comment with your port
+  user: # replace this comment with your user
+  password: # replace this comment with your password
+  defaults_file: "" # <- If you use this defaults_file, your password will not be used.
+                    #    Please see README.' > ~/.ssql
+```
+
+----
 
 #### Step 2
 Once you have installed ssql and configured your desired hosts, using ssql is as simple
