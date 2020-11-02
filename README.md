@@ -1,5 +1,8 @@
 # Simplesql (ssql)
 
+## Demo
+![ssql.gif](https://github.com/georgiotunson/ssql/blob/master/ssql.gif)
+
 ----
 Simplesql (ssql) is an open source command line utility which is a MySQL CLI that provides a
 command-line interface for managing your mysql databases. It manages host credentials and option
@@ -19,9 +22,6 @@ Follow the instructions in the below installation and usage sections.
 ## To start developing ssql
 
 Feel free to submit a pull request or contact me. I would love your help :)
-
-## Demo
-![ssql.gif](https://github.com/georgiotunson/ssql/blob/master/ssql.gif)
 
 ## Installation
 
